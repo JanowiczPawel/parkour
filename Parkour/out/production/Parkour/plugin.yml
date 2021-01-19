@@ -1,0 +1,7 @@
+main: Main
+version: 1.0
+name: Parkour
+commands:
+  kordyset:
+    description: ustawianie kordow
+    usage: /<command>
