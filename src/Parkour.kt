@@ -109,55 +109,40 @@ class Main: JavaPlugin(), Listener {
         }
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy1).location) {
             if (player.containsKey(p.name)&&player.containsValue(0)) {
-                for ((key, czas) in player) {
-                    if (key == p.name) {
-                        p.sendMessage("Parkour sie zaczal!")
-                        p.sendMessage(player.toString())
-                        player.put(p.name, 1)
-                        p.sendMessage(player.toString())
-                        czas_p.put(e.player.name, System.currentTimeMillis())
-                        add_itemy(p)
-                    }
+                    p.sendMessage("Parkour sie zaczal!")
+                    p.sendMessage(player.toString())
+                    player.put(p.name, 1)
+                    p.sendMessage(player.toString())
+                    czas_p.put(e.player.name, System.currentTimeMillis())
+                    add_itemy(p)
                 }
-            }
             else if(!player.containsKey(p.name)||!player.containsValue(0)&&!player.containsValue(1)&&!player.containsValue(2)&&!player.containsValue(3)){
                 player.put(p.name, 0)
             }
         }
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy2).location) {
-            if (player.containsKey(p.name) && player.containsValue(1)) {
-                for ((key, czas) in player) {
-                    if (key == p.name) {
-                        p.sendMessage("Pierwszy checkpoint! Czas: ${czas}s")
-                        p.sendMessage(player.toString())
-                        player.put(p.name, 2)
-                    }
+            if (player.containsKey(p.name)&&player.containsValue(1)) {
+                    p.sendMessage("Pierwszy checkpoint! Czas: ${czas}s")
+                    p.sendMessage(player.toString())
+                    player.put(p.name, 2)
                 }
             }
-        }
+
 
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy3).location) {
             if (player.containsKey(p.name)&&player.containsValue(2)) {
-                for ((key, czas) in player) {
-                    if(key == p.name) {
-                        p.sendMessage("Drugi checkpoint! Czas: ${czas}s")
-                        p.sendMessage(player.toString())
-                        player.put(p.name, 3)
-                    }
-                }
+                    p.sendMessage("Drugi checkpoint! Czas: ${czas}s")
+                    p.sendMessage(player.toString())
+                    player.put(p.name, 3)
             }
         }
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy4).location) {
             if (player.containsKey(p.name)&&player.containsValue(3)) {
-                for ((key, czas) in player) {
-                    if(key == p.name) {
-                        p.sendMessage("Koniec! Czas: ${czas}s")
-                        p.sendMessage(player.toString())
-                        player.put(p.name, 0)
-                        p.sendMessage(player.toString())
-                        remove_itemy(p)
-                    }
-                }
+                    p.sendMessage("Koniec! Czas: ${czas}s")
+                    p.sendMessage(player.toString())
+                    player.put(p.name, 0)
+                    p.sendMessage(player.toString())
+                    remove_itemy(p)
             }
         }
         @EventHandler
