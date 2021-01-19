@@ -108,7 +108,7 @@ class Main: JavaPlugin(), Listener {
             p.teleport(kordy3)
         }
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy1).location) {
-            if ((player.containsKey(p.name)&&player.containsValue(0))) {
+            if (player.containsKey(p.name)&&player.containsValue(0)) {
                     p.sendMessage("Parkour sie zaczal!")
                     p.sendMessage(player.toString())
                     player.put(p.name, 1)
@@ -121,7 +121,7 @@ class Main: JavaPlugin(), Listener {
             }
         }
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy2).location) {
-            if ((player.containsKey(p.name)&&player.containsValue(1))) {
+            if (player.containsKey(p.name)&&player.containsValue(1)) {
                     p.sendMessage("Pierwszy checkpoint! Czas: ${czas}s")
                     p.sendMessage(player.toString())
                     player.put(p.name, 2)
@@ -130,14 +130,14 @@ class Main: JavaPlugin(), Listener {
 
 
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy3).location) {
-            if ((player.containsKey(p.name)&&player.containsValue(2))) {
+            if (player.containsKey(p.name)&&player.containsValue(2)) {
                     p.sendMessage("Drugi checkpoint! Czas: ${czas}s")
                     p.sendMessage(player.toString())
                     player.put(p.name, 3)
             }
         }
         if (p.world.getBlockAt(p.location).location == p.world.getBlockAt(kordy4).location) {
-            if ((player.containsKey(p.name)&&player.containsValue(3))) {
+            if (player.containsKey(p.name)&&player.containsValue(3)) {
                     p.sendMessage("Koniec! Czas: ${czas}s")
                     p.sendMessage(player.toString())
                     player.put(p.name, 0)
